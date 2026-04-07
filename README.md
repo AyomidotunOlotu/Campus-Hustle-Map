@@ -1,2 +1,2 @@
 # Campus-Hustle-Map
-Map for Campus
+Map for Campus Hustle
