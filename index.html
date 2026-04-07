@@ -41,6 +41,7 @@
       font-size: 16px;
       line-height: 1.65;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased; /* Better rendering */
     }
 
     :focus-visible {
@@ -76,15 +77,18 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      gap: 24px; /* Add spacing between logo and button */
     }
     .nav-logo {
       font-family: var(--font-head);
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 1.3rem; /* Increased from 1.15rem */
       letter-spacing: -.02em;
       color: var(--white);
+      transition: opacity .2s;
     }
     .nav-logo span { color: var(--green); }
+    .nav-logo:hover { opacity: 0.9; } /* Add hover effect */
     .nav-pill {
       background: var(--green);
       color: #000;
@@ -261,10 +265,11 @@
     .section-title .hl { color: var(--yellow); }
     .section-desc {
       color: var(--subtext);
-      font-weight: 300;
+      font-weight: 400; /* Changed from 300 for better readability */
       font-size: .98rem;
       max-width: 520px;
       margin-top: 12px;
+      line-height: 1.7;
     }
 
     /* REALITY CHECK */
@@ -425,10 +430,10 @@
     .examples-list { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
     .example-item {
       display: grid;
-      grid-template-columns: 60px 1fr auto;
-      align-items: center;
-      gap: 20px;
-      padding: 22px 24px;
+      grid-template-columns: 70px 1fr auto; /* Increased from 60px to 70px */
+      align-items: flex-start; /* Changed from center */
+      gap: 24px; /* Increased from 20px */
+      padding: 28px 24px; /* Increased from 22px */
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
@@ -436,24 +441,35 @@
     }
     .example-item:hover { border-color: rgba(0,255,133,.22); }
     @media(max-width:600px){
-      .example-item { grid-template-columns: 44px 1fr; }
+      .example-item {
+        grid-template-columns: 50px 1fr;
+        gap: 16px;
+        padding: 20px 16px;
+      }
+      .ex-num { font-size: 1.1rem; }
+    }
       .example-income { display: none; }
     }
     .ex-num {
       font-family: var(--font-head);
-      font-size: 1.6rem;
+      font-size: 1.3rem; /* Reduced from 1.6rem */
       font-weight: 800;
       color: var(--border);
       text-align: center;
+      flex-shrink: 0; /* Prevent shrinking */
     }
     .ex-title {
       font-family: var(--font-head);
       font-weight: 700;
       font-size: 1rem;
       color: var(--white);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
-    .ex-desc { font-size: .85rem; color: var(--subtext); }
+    .ex-desc {
+      font-size: .88rem; /* Increased from .85rem */
+      color: var(--subtext);
+      line-height: 1.7; /* Increased from default */
+    }
     .example-income { text-align: right; }
     .income-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
     .income-val {
