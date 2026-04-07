@@ -81,9 +81,9 @@
     }
     .nav-logo {
       font-family: var(--font-head);
-      font-weight: 800;
-      font-size: 0.95rem;
-      letter-spacing: -.02em;
+      font-weight: 700;           /* slightly less heavy */
+      font-size: 0.75rem;         /* smaller — was 0.95rem */
+      letter-spacing: -0.01em;    /* tighten up spacing */
       color: var(--white);
       transition: opacity .2s;
     }
@@ -94,19 +94,22 @@
       background: var(--green);
       color: #000;
       font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 0.68rem;
-      padding: 8px 16px;
-      min-height: 34px;
+      font-weight: 600;           /* professional weight, not too bold */
+      font-size: 0.6rem;          /* smaller text — was 0.68rem */
+      padding: 6px 12px;          /* compact padding — was 8px 16px */
+      min-height: 28px;           /* slimmer height — was 34px */
       border-radius: 99px;
       text-decoration: none;
-      letter-spacing: .02em;
-      transition: opacity .2s;
+      letter-spacing: 0.04em;     /* slightly wider for readability */
+      text-transform: uppercase;  /* looks more like a proper button */
+      transition: opacity .2s, transform .1s;
       display: inline-flex;
       align-items: center;
+      gap: 4px;                   /* if you add an icon later */
     }
-    .nav-pill:hover { opacity: .85; }
-    .nav-pill:active { transform: scale(0.98); }
+    .nav-pill:hover { opacity: .9; }
+    .nav-pill:active { transform: scale(0.97); }
+
 
     /* HERO */
     .hero {
