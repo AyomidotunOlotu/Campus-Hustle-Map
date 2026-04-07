@@ -510,11 +510,14 @@
     .step-content {
       grid-column: 2;
     }
-    .step:not(:last-child) .step-line {
+    .step .step-line {
       position: absolute;
       left: 23px; top: 48px; bottom: 0;
       width: 2px;
       background: var(--border);
+    }
+    .step:last-child .step-line {
+      display: none;
     }
     .step-dot {
       width: 48px; height: 48px;
@@ -540,7 +543,7 @@
       font-size: 1.05rem;
       color: var(--white);
       margin-bottom: 6px;
-      padding-top: 5px;
+      padding-top: 12px;
     }
     .step-desc { font-size: .88rem; color: var(--subtext); line-height: 1.65; }
     .step-tip { margin-top: 10px; font-size: .8rem; color: var(--green); font-weight: 500; }
